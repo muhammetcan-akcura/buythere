@@ -1371,40 +1371,41 @@ const PricingPage = () => {
     }
 
     return (
-        <div id="pricing" style={{ background: "linear-gradient(to bottom, #f9fafb, white)", minHeight: "100vh" }}>
-            <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "80px 16px" }}>
-                <div style={{ textAlign: "center", marginBottom: "64px" }}>
-                    <h1
-                        style={{
-                            fontSize: "3.75rem",
-                            fontWeight: "bold",
-                            marginBottom: "16px",
-                            background: "linear-gradient(to right, #9333ea, #2563eb)",
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent",
-                            backgroundClip: "text",
-                        }}
-                    >
-                        Pricing Plans
-                    </h1>
-                    <p style={{ fontSize: "18px", color: "#6b7280", maxWidth: "672px", margin: "0 auto" }}>
-                        Choose the perfect package. All packages include 6% service fee.
+        <div id="pricing" style={{ background: "var(--warm-white)", padding: "96px 0" }}>
+            <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px" }}>
+                <div style={{ textAlign: "center", marginBottom: "72px" }}>
+                    <p style={{
+                        fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.1em",
+                        textTransform: "uppercase", color: "#6B7280", marginBottom: 12
+                    }}>Pricing</p>
+                    <h2 style={{
+                        fontSize: "clamp(2rem, 4vw, 2.8rem)",
+                        fontWeight: 700,
+                        letterSpacing: "-0.03em",
+                        color: "#111827",
+                        marginBottom: 14,
+                        lineHeight: 1.2,
+                    }}>
+                        Simple, transparent pricing
+                    </h2>
+                    <p style={{ fontSize: "1rem", color: "#6B7280", maxWidth: 480, margin: "0 auto", lineHeight: 1.7 }}>
+                        Choose the package that fits your needs. All plans include a 6% service fee processed at checkout.
                     </p>
                 </div>
 
                 {categories.map((category, catIndex) => (
                     <div key={catIndex} style={{ marginBottom: "80px" }}>
-                        <h2
-                            style={{
-                                fontSize: "2.25rem",
-                                fontWeight: "bold",
-                                textAlign: "center",
-                                marginBottom: "48px",
-                                color: "#111827",
-                            }}
-                        >
-                            {category}
-                        </h2>
+                        <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 36 }}>
+                            <span style={{
+                                fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.12em",
+                                textTransform: "uppercase", color: "#3B5FDB",
+                                background: "#EEF2FF", padding: "5px 12px",
+                                borderRadius: 100, border: "1px solid #DDE5FF"
+                            }}>
+                                {category}
+                            </span>
+                            <div style={{ flex: 1, height: 1, background: "var(--border-soft)" }} />
+                        </div>
 
                         <div
                             style={{
@@ -1419,80 +1420,105 @@ const PricingPage = () => {
                                     <div
                                         key={index}
                                         style={{
-                                            backgroundColor: "white",
-                                            border: "2px solid #e5e7eb",
+                                            backgroundColor: "#fff",
+                                            border: "1px solid #E5E7EB",
                                             borderRadius: "16px",
-                                            padding: "24px",
+                                            padding: "28px 24px",
                                             display: "flex",
                                             flexDirection: "column",
-                                            transition: "all 0.3s",
-                                            cursor: "pointer",
+                                            transition: "all 0.22s ease",
+                                            cursor: "default",
+                                            position: "relative",
+                                            overflow: "hidden",
                                         }}
                                         onMouseEnter={(e) => {
-                                            e.currentTarget.style.borderColor = "#9333ea"
-                                            e.currentTarget.style.boxShadow = "0 20px 25px -5px rgba(0, 0, 0, 0.1)"
-                                            e.currentTarget.style.transform = "translateY(-8px)"
+                                            e.currentTarget.style.borderColor = "#3B5FDB"
+                                            e.currentTarget.style.boxShadow = "0 12px 40px rgba(59,95,219,0.10)"
+                                            e.currentTarget.style.transform = "translateY(-4px)"
                                         }}
                                         onMouseLeave={(e) => {
-                                            e.currentTarget.style.borderColor = "#e5e7eb"
+                                            e.currentTarget.style.borderColor = "#E5E7EB"
                                             e.currentTarget.style.boxShadow = "none"
                                             e.currentTarget.style.transform = "translateY(0)"
                                         }}
                                     >
-                                        <h4 style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "12px", color: "#111827" }}>
-                                            {service.title}
-                                        </h4>
+                                        {/* Top accent line */}
+                                        <div style={{
+                                            position: "absolute", top: 0, left: 24, right: 24,
+                                            height: 2, background: "linear-gradient(90deg, #3B5FDB, #6B8EF5)",
+                                            borderRadius: "0 0 4px 4px",
+                                            opacity: 0.6
+                                        }} />
 
-                                        <div style={{ marginBottom: "16px" }}>
-                                            <span style={{ fontSize: "36px", fontWeight: "bold", color: "#9333ea" }}>{service.price}</span>
-                                            <span style={{ color: "#6b7280", fontSize: "14px", marginLeft: "4px" }}></span>
+                                        {/* Title + price */}
+                                        <div style={{ marginBottom: 20 }}>
+                                            <h3 style={{
+                                                fontSize: "1rem", fontWeight: 600,
+                                                color: "#374151", marginBottom: 10,
+                                                letterSpacing: "-0.01em"
+                                            }}>
+                                                {service.title}
+                                            </h3>
+                                            <div style={{ display: "flex", alignItems: "baseline", gap: 4 }}>
+                                                <span style={{
+                                                    fontSize: "2rem", fontWeight: 700,
+                                                    color: "#111827", letterSpacing: "-0.04em"
+                                                }}>
+                                                    {service.price}
+                                                </span>
+                                                <span style={{ fontSize: "0.8rem", color: "#9CA3AF" }}>/ project</span>
+                                            </div>
                                         </div>
 
-                                        <div style={{ flex: 1, marginBottom: "24px" }}>
+                                        {/* Divider */}
+                                        <div style={{ height: 1, background: "#F3F4F6", marginBottom: 20 }} />
+
+                                        {/* Features */}
+                                        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 10, marginBottom: 24 }}>
                                             {service.features.map((feature, i) => (
-                                                <div key={i} style={{ display: "flex", alignItems: "flex-start", marginBottom: "12px" }}>
-                                                    <div
-                                                        style={{
-                                                            width: "20px",
-                                                            height: "20px",
-                                                            borderRadius: "50%",
-                                                            backgroundColor: "#f3e8ff",
-                                                            display: "flex",
-                                                            alignItems: "center",
-                                                            justifyContent: "center",
-                                                            flexShrink: 0,
-                                                            marginTop: "2px",
-                                                        }}
-                                                    >
-                                                        <svg
-                                                            style={{ width: "12px", height: "12px", color: "#9333ea" }}
-                                                            fill="none"
-                                                            viewBox="0 0 24 24"
-                                                            stroke="currentColor"
-                                                        >
-                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                                <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
+                                                    <div style={{
+                                                        flexShrink: 0, marginTop: 2,
+                                                        width: 16, height: 16,
+                                                        borderRadius: "50%",
+                                                        background: "#EEF2FF",
+                                                        display: "flex", alignItems: "center", justifyContent: "center"
+                                                    }}>
+                                                        <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
+                                                            <path d="M1.5 4.5l2 2 4-4" stroke="#3B5FDB" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                                         </svg>
                                                     </div>
-                                                    <span style={{ marginLeft: "12px", fontSize: "14px", color: "#374151" }}>{feature}</span>
+                                                    <span style={{ fontSize: "0.85rem", color: "#4B5563", lineHeight: 1.5 }}>
+                                                        {feature}
+                                                    </span>
                                                 </div>
                                             ))}
                                         </div>
 
+                                        {/* CTA button */}
                                         <button
                                             onClick={() => handleGetStarted(service)}
                                             style={{
                                                 width: "100%",
-                                                background: "linear-gradient(to right, #9333ea, #2563eb)",
+                                                background: "#111827",
                                                 color: "white",
                                                 fontWeight: 600,
-                                                padding: "12px",
-                                                borderRadius: "8px",
+                                                fontSize: "0.875rem",
+                                                padding: "11px 16px",
+                                                borderRadius: "10px",
                                                 border: "none",
                                                 cursor: "pointer",
-                                                transition: "all 0.3s",
+                                                transition: "all 0.2s ease",
+                                                letterSpacing: "-0.01em",
+                                            }}
+                                            onMouseEnter={(e) => {
+                                                e.currentTarget.style.background = "#3B5FDB"
+                                            }}
+                                            onMouseLeave={(e) => {
+                                                e.currentTarget.style.background = "#111827"
                                             }}
                                         >
-                                            Get Started
+                                            Get started →
                                         </button>
                                     </div>
                                 ))}

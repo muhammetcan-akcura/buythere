@@ -1,80 +1,112 @@
+"use client";
 import Link from "next/link";
-import Image from "next/image";
+
 
 const Footer = () => {
     return (
-        <div className="bg-darkblue -mt-40">
-            <div className="mx-auto max-w-2xl pt-48 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-                <div className="my-24 grid grid-cols-1 gap-y-10 gap-x-16 lg:grid-cols-2 xl:gap-x-8">
+        <footer style={{ background: "var(--slate-dark)", color: "rgba(255,255,255,0.65)" }}>
+            <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-16 pb-10">
 
-                    {/* LOGO & DESCRIPTION */}
-                    <div className='col-span-1'>
-                        <Link href="/" className="text-2xl font-semibold text-white flex items-center gap-2">
-                            Buythere
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 pb-12"
+                    style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+
+                    {/* Brand col */}
+                    <div className="lg:col-span-1">
+                        <Link href="/" style={{ textDecoration: "none" }}>
+                            <span style={{
+                                fontFamily: "'Syne', sans-serif",
+                                fontWeight: 800,
+                                fontSize: "1.4rem",
+                                color: "#fff",
+                                letterSpacing: "-0.02em"
+                            }}>
+                                buy<span style={{ color: "#6B9BF2" }}>there</span>
+                            </span>
                         </Link>
-                        <p className="text-offwhite text-base mt-4 leading-relaxed">
-                            We&apos;re a full-service digital marketing agency dedicated to helping brands grow through impactful advertising campaigns, strategic marketing solutions, and measurable performance results. Our team blends creativity with data-driven insights to deliver targeted ad strategies, engaging content, and long-term SEO growth that drives visibility, traffic, and conversions across all digital channels.
+                        <p style={{ marginTop: 14, lineHeight: 1.75, fontSize: "0.9rem", maxWidth: 300 }}>
+                            A full-service digital marketing agency helping brands grow through impactful advertising,
+                            strategic SEO, and measurable results.
                         </p>
+                        <div style={{ marginTop: 20, display: "flex", gap: 10 }}>
+                            <Link href="mailto:info@buythere.com"
+                                style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: "0.85rem", color: "rgba(255,255,255,0.7)", textDecoration: "none", padding: "7px 14px", background: "rgba(255,255,255,0.06)", borderRadius: 8, border: "1px solid rgba(255,255,255,0.1)", transition: "all 0.2s" }}
+                                onMouseEnter={e => e.currentTarget.style.background = "rgba(255,255,255,0.1)"}
+                                onMouseLeave={e => e.currentTarget.style.background = "rgba(255,255,255,0.06)"}
+                            >
+                                ✉ info@buythere.com
+                            </Link>
+                        </div>
                     </div>
 
-                    {/* CONTACT INFO */}
-                    <div className='col-span-1'>
-                        <h3 className="text-white text-xl font-semibold mb-2">Buythere Limited</h3>
-                        <p className="text-offwhite text-base mb-4">Zekeriya Genc</p>
-
-                        <div className="flex gap-3 items-center mb-4">
-                            <Image src={'/assets/footer/email.svg'} alt="email-icon" width={20} height={20} />
-                            <div>
-                                <span className="text-offwhite text-base font-semibold">E-mail: </span>
-                                <Link href="mailto:info@buythere.com" className="text-offwhite hover:text-white transition-colors duration-300">
-                                    info@buythere.com
+                    {/* Quick links */}
+                    <div>
+                        <p style={{ fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: 16 }}>
+                            Navigation
+                        </p>
+                        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                            {[
+                                { label: "Home", href: "/" },
+                                { label: "Services", href: "/#services" },
+                                { label: "Pricing", href: "/#pricing" },
+                                { label: "About", href: "/#about" },
+                                { label: "Contact", href: "/contact-us" },
+                            ].map(item => (
+                                <Link key={item.label} href={item.href}
+                                    style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.6)", textDecoration: "none", transition: "color 0.2s" }}
+                                    onMouseEnter={e => e.currentTarget.style.color = "#fff"}
+                                    onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.6)"}
+                                >
+                                    {item.label}
                                 </Link>
-                            </div>
+                            ))}
                         </div>
+                    </div>
 
-                        <div className="flex gap-3 items-center mb-4">
-                            <Image src={'/assets/footer/telephone.svg'} alt="telephone-icon" width={20} height={20} />
-                            <div>
-                                <span className="text-offwhite text-base font-semibold">Phone: </span>
-                                <Link href="tel:+905523568756" className="text-offwhite hover:text-white transition-colors duration-300">
-                                    +90 5523568756
+                    {/* Legal + contact */}
+                    <div>
+                        <p style={{ fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: 16 }}>
+                            Legal
+                        </p>
+                        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                            {[
+                                { label: "Terms of Service", href: "/terms-of-service" },
+                                { label: "Privacy Policy", href: "/privacy-policy" },
+                                { label: "Refund Policy", href: "/refund-policy" },
+                            ].map(item => (
+                                <Link key={item.label} href={item.href}
+                                    style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.6)", textDecoration: "none", transition: "color 0.2s" }}
+                                    onMouseEnter={e => e.currentTarget.style.color = "#fff"}
+                                    onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.6)"}
+                                >
+                                    {item.label}
                                 </Link>
-                            </div>
+                            ))}
                         </div>
 
-                        <div className="flex gap-3 items-start mb-4">
-                            <div className="mt-1 flex-shrink-0">
-                                <Image src={'/assets/footer/mask.svg'} alt="address-icon" width={20} height={20} />
-                            </div>
-                            <div>
-                                <p className="text-offwhite text-base font-semibold mb-1">Address (EN):</p>
-                                <p className="text-offwhite text-base leading-relaxed">
-                                    128, City Road
-                                    London
-                                    EC1V 2NX
-                                    UNITED KINGDOM
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="mt-4">
-                            <p className="text-offwhite text-base">
-                                <span className="font-semibold">Postal/ZIP code:</span> 999077
+                        <div style={{ marginTop: 24 }}>
+                            <p style={{ fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: 10 }}>
+                                Contact
+                            </p>
+                            <Link href="tel:+905523568756"
+                                style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.6)", textDecoration: "none", display: "block", marginBottom: 6 }}>
+                                +90 552 356 87 56
+                            </Link>
+                            <p style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.4)", lineHeight: 1.6 }}>
+                                128 City Road, London<br />EC1V 2NX, United Kingdom
                             </p>
                         </div>
                     </div>
-
                 </div>
 
-                {/* BOTTOM BAR */}
-                <div className='py-8 text-center border-t border-t-bordertop'>
-                    <h4 className='text-offwhite text-sm font-normal'>
-                        © 2020 Buythere. All right reserved.
-                    </h4>
+                {/* Bottom bar */}
+                <div style={{ paddingTop: 24, display: "flex", flexDirection: "column", gap: 4, alignItems: "center", textAlign: "center" }}>
+                    <p style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.3)" }}>
+                        © {new Date().getFullYear()} Buythere Limited. All rights reserved.
+                    </p>
                 </div>
 
             </div>
-        </div>
+        </footer>
     );
 };
 

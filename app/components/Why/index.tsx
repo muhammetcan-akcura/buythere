@@ -1,64 +1,87 @@
 import Image from "next/image";
 
-interface whydata {
-    heading: string;
-    subheading: string;
-}
-
-const whydata: whydata[] = [
+const whydata = [
     {
         heading: "Data-Driven Strategy",
-        subheading: "We create every SEO and marketing plan based on analytics and real performance metrics — not guesswork.",
+        subheading: "Every plan is built on real analytics and performance metrics — not assumptions.",
     },
     {
         heading: "Transparent Reporting",
-        subheading: "Our clients see exactly what we see: clear, detailed reports that track growth, visibility, and ROI in real time.",
+        subheading: "Clear, detailed reports so you always know exactly where your budget is going.",
     },
     {
         heading: "Long-Term Results",
-        subheading: "We don’t chase quick wins — we build sustainable online growth that lasts and keeps your brand ahead of the competition.",
+        subheading: "We build sustainable growth that keeps your brand ahead — not just short-term spikes.",
     }
-]
-
+];
 
 const Why = () => {
     return (
-        <div id="about">
+        <section id="about" style={{ background: "var(--cream)", padding: "80px 0" }}>
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-            <div className='mx-auto max-w-7xl px-4 my-20 sm:py-20 lg:px-8'>
-                <div className='grid grid-cols-1 lg:grid-cols-2'>
-
-                    {/* COLUMN-1 */}
-                    <div className="lg:-ml-64">
-                        <Image src="/assets/why/iPad.png" alt="iPad-image" width={4000} height={900} />
+                    {/* Image col */}
+                    <div style={{ borderRadius: 20, overflow: "hidden", boxShadow: "0 20px 60px rgba(0,0,0,0.08)" }}>
+                        <Image
+                            src="/assets/why/iPad.png"
+                            alt="Why Buythere"
+                            width={900}
+                            height={600}
+                            style={{ width: "100%", height: "auto", display: "block" }}
+                        />
                     </div>
 
-                    {/* COLUMN-2 */}
+                    {/* Text col */}
                     <div>
-                        <h3 className="text-4xl lg:text-5xl pt-4 font-semibold sm:leading-tight mt-5 text-center lg:text-start">Why we best?</h3>
-                        <h4 className="text-lg pt-4 font-normal sm:leading-tight text-center text-beach lg:text-start">We’re the best because we combine proven SEO expertise with creative digital strategies that deliver real results.</h4>
+                        <p className="section-label">Why choose us</p>
+                        <h2 style={{
+                            fontFamily: "'Syne', sans-serif",
+                            fontWeight: 800,
+                            fontSize: "clamp(2rem, 3.5vw, 2.8rem)",
+                            letterSpacing: "-0.025em",
+                            lineHeight: 1.2,
+                            color: "var(--slate-dark)",
+                            marginBottom: 16
+                        }}>
+                            Results you can actually measure
+                        </h2>
+                        <p style={{ color: "var(--slate-soft)", fontSize: "1rem", lineHeight: 1.75, marginBottom: 36 }}>
+                            We combine proven SEO expertise with creative digital strategies.
+                            Everything we do is transparent, trackable and built to last.
+                        </p>
 
-                        <div className="mt-10">
-                            {whydata.map((items, i) => (
-                                <div className="flex mt-4" key={i}>
-                                    <div className="rounded-full h-10 w-12 flex items-center justify-center bg-circlebg">
-                                        <Image src="/assets/why/check.svg" alt="check-image" width={24} height={24} />
+                        <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+                            {whydata.map((item, i) => (
+                                <div key={i} style={{ display: "flex", gap: 16 }}>
+                                    <div style={{
+                                        flexShrink: 0,
+                                        width: 40, height: 40,
+                                        borderRadius: 10,
+                                        background: "var(--accent-soft)",
+                                        display: "flex", alignItems: "center", justifyContent: "center"
+                                    }}>
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <path d="M3 9l4.5 4.5L15 5" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
                                     </div>
-                                    <div className="ml-5">
-                                        <h4 className="text-2xl font-semibold">{items.heading}</h4>
-                                        <h5 className="text-lg text-beach font-normal mt-2">{items.subheading}</h5>
+                                    <div>
+                                        <h3 style={{ fontWeight: 600, fontSize: "1rem", color: "var(--slate-dark)", marginBottom: 4 }}>
+                                            {item.heading}
+                                        </h3>
+                                        <p style={{ fontSize: "0.9rem", color: "var(--slate-soft)", lineHeight: 1.65 }}>
+                                            {item.subheading}
+                                        </p>
                                     </div>
                                 </div>
                             ))}
                         </div>
-
                     </div>
 
                 </div>
             </div>
-
-        </div>
-    )
-}
+        </section>
+    );
+};
 
 export default Why;

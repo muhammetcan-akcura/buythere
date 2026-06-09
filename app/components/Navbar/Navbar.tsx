@@ -1,3 +1,4 @@
+"use client"
 import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
@@ -43,23 +44,29 @@ const Navbar = () => {
     const [openDropdown, setOpenDropdown] = React.useState<string | null>(null);
 
     return (
-        <Disclosure as="nav" className="navbar bg-white shadow-sm">
+        <Disclosure as="nav" className="navbar">
             <>
-                <div className="mx-auto max-w-7xl px-6 lg:py-4 lg:px-8">
-                    <div className="relative flex h-20 items-center justify-between">
+                <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div className="relative flex h-18 items-center justify-between" style={{ height: 68 }}>
 
-                        {/* LOGO / BRAND NAME */}
-                        <div className="flex flex-1 items-center sm:items-stretch sm:justify-start">
-                            <Link href="/" className="flex items-center space-x-2">
-                                <span className="text-2xl font-bold text-gray-900 tracking-tight hover:text-blue-600 transition-colors duration-200">
-                                   Buythere
+                        {/* LOGO */}
+                        <div className="flex flex-1 items-center">
+                            <Link href="/" className="flex items-center gap-2">
+                                <span style={{
+                                    fontFamily: "'Syne', sans-serif",
+                                    fontWeight: 800,
+                                    fontSize: "1.35rem",
+                                    color: "var(--slate-dark)",
+                                    letterSpacing: "-0.02em"
+                                }}>
+                                    buy<span style={{ color: "var(--accent)" }}>there</span>
                                 </span>
                             </Link>
                         </div>
 
                         {/* NAVIGATION LINKS */}
                         <div className="hidden lg:block m-auto">
-                            <div className="flex space-x-4">
+                            <div className="flex items-center gap-1">
                                 {navigation.map((item) => (
                                     item.submenu ? (
                                         <div
@@ -69,19 +76,32 @@ const Navbar = () => {
                                             onMouseLeave={() => setOpenDropdown(null)}
                                         >
                                             <button
-                                                className={classNames(
-                                                    'px-3 py-4 text-lg font-normal opacity-75 hover:text-black hover:opacity-100 space-links flex items-center gap-1'
-                                                )}
+                                                style={{ fontSize: "0.9rem", fontWeight: 500, color: "var(--slate-mid)", padding: "8px 14px", background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: 4, borderRadius: 8, transition: "all 0.2s" }}
+                                                onMouseEnter={e => (e.currentTarget.style.background = "var(--cream)")}
+                                                onMouseLeave={e => (e.currentTarget.style.background = "none")}
                                             >
                                                 {item.name}
-                                                <ChevronDownIcon className={`h-4 w-4 transition-transform duration-200 ${openDropdown === item.name ? 'rotate-180' : ''}`} />
+                                                <ChevronDownIcon className={`h-3.5 w-3.5 transition-transform duration-200 ${openDropdown === item.name ? 'rotate-180' : ''}`} />
                                             </button>
-                                            <div className={`absolute left-0 mt-0 w-56 bg-white rounded-lg shadow-lg py-2 z-50 transition-all duration-200 ${openDropdown === item.name ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
+                                            <div style={{
+                                                position: "absolute", left: 0, top: "100%", marginTop: 4,
+                                                width: 220, background: "#fff", borderRadius: 12,
+                                                boxShadow: "0 8px 32px rgba(0,0,0,0.1)",
+                                                border: "1px solid var(--border-soft)",
+                                                padding: "6px",
+                                                zIndex: 50,
+                                                transition: "all 0.2s",
+                                                opacity: openDropdown === item.name ? 1 : 0,
+                                                visibility: openDropdown === item.name ? "visible" : "hidden",
+                                                transform: openDropdown === item.name ? "translateY(0)" : "translateY(-6px)"
+                                            }}>
                                                 {item.submenu.map((subItem) => (
                                                     <Link
                                                         key={subItem.name}
                                                         href={subItem.href}
-                                                        className="block px-4 py-3 text-base text-gray-700 hover:bg-gray-100 hover:text-black transition-colors duration-200"
+                                                        style={{ display: "block", padding: "9px 14px", fontSize: "0.875rem", color: "var(--slate-mid)", borderRadius: 8, transition: "all 0.15s", textDecoration: "none" }}
+                                                        onMouseEnter={e => { e.currentTarget.style.background = "var(--cream)"; e.currentTarget.style.color = "var(--slate-dark)"; }}
+                                                        onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "var(--slate-mid)"; }}
                                                     >
                                                         {subItem.name}
                                                     </Link>
@@ -92,11 +112,9 @@ const Navbar = () => {
                                         <Link
                                             key={item.name}
                                             href={item.href}
-                                            className={classNames(
-                                                item.current ? 'text-black hover:opacity-100' : 'hover:text-black hover:opacity-100',
-                                                'px-3 py-4 text-lg font-normal opacity-75 space-links'
-                                            )}
-                                            aria-current={item.href ? 'page' : undefined}
+                                            style={{ fontSize: "0.9rem", fontWeight: 500, color: "var(--slate-mid)", padding: "8px 14px", borderRadius: 8, textDecoration: "none", transition: "all 0.2s" }}
+                                            onMouseEnter={e => { e.currentTarget.style.background = "var(--cream)"; e.currentTarget.style.color = "var(--slate-dark)"; }}
+                                            onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "var(--slate-mid)"; }}
                                         >
                                             {item.name}
                                         </Link>
@@ -105,9 +123,14 @@ const Navbar = () => {
                             </div>
                         </div>
 
-                        {/* DRAWER ICON (MOBILE) */}
-                        <div className='block lg:hidden'>
-                            <Bars3Icon className="block h-6 w-6" aria-hidden="true" onClick={() => setIsOpen(true)} />
+                        {/* RIGHT: CTA + hamburger */}
+                        <div className="flex items-center gap-3">
+                            <Link href="/contact-us" className="hidden lg:inline-flex btn-primary" style={{ fontSize: "0.85rem", padding: "9px 20px" }}>
+                                Get Started
+                            </Link>
+                            <div className='block lg:hidden'>
+                                <Bars3Icon style={{ width: 24, height: 24, color: "var(--slate-dark)" }} aria-hidden="true" onClick={() => setIsOpen(true)} />
+                            </div>
                         </div>
 
                         {/* MOBILE DRAWER */}
