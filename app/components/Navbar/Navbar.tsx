@@ -44,8 +44,9 @@ const Navbar = () => {
     const [openDropdown, setOpenDropdown] = React.useState<string | null>(null);
 
     return (
-        <Disclosure as="nav" className="navbar">
-            <>
+        <>
+            <Disclosure as="nav" className="navbar">
+
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="relative flex h-18 items-center justify-between" style={{ height: 68 }}>
 
@@ -132,15 +133,15 @@ const Navbar = () => {
                                 <Bars3Icon style={{ width: 24, height: 24, color: "var(--slate-dark)" }} aria-hidden="true" onClick={() => setIsOpen(true)} />
                             </div>
                         </div>
-
-                        {/* MOBILE DRAWER */}
-                        <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-                            <Drawerdata />
-                        </Drawer>
                     </div>
                 </div>
-            </>
-        </Disclosure>
+            </Disclosure>
+
+            {/* MOBILE DRAWER (Moved outside Disclosure to avoid clipping by backdrop-filter) */}
+            <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
+                <Drawerdata />
+            </Drawer>
+        </>
     )
 }
 

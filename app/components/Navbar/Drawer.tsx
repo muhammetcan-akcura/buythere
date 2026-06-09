@@ -13,43 +13,45 @@ const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
     return (
         <main
             className={
-                " fixed overflow-hidden z-10 bg-gray-900 bg-opacity-25 inset-0 transform ease-in-out " +
+                "fixed inset-0 z-50 bg-gray-900 bg-opacity-50 transition-opacity " +
                 (isOpen
-                    ? " transition-opacity opacity-100 duration-500 translate-x-0  "
-                    : " transition-all delay-500 opacity-0 -translate-x-full  ")
+                    ? "opacity-100 pointer-events-auto"
+                    : "opacity-0 pointer-events-none delay-500")
             }
         >
             <section
-        className={
-            "w-340px max-w-lg left-0 absolute bg-white h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform " +
-            (isOpen ? "translate-x-0" : "-translate-x-full")
-        }
-    >
- 
-                <article className="relative w-270 max-w-lg pb-10 flex flex-col space-y-6 h-full">
-                    <header className="p-4 flex items-center justify-between"><img
-                        className="h-12 w-40"
-                        src={"/assets/logo/logo.png"}
-                        alt="Courses-Logo"
-                        onClick={() => {
-                            setIsOpen(false);
-                        }}
-                        width={48}    
-    height={48}
-                    /><XMarkIcon className="block h-6 w-6" onClick={() => {
-                        setIsOpen(false);
-                    }} />
+                className={
+                    "absolute inset-y-0 left-0 w-[300px] max-w-full bg-white shadow-xl transform transition-transform duration-500 ease-in-out " +
+                    (isOpen ? "translate-x-0" : "-translate-x-full")
+                }
+            >
+                <article className="relative w-full flex flex-col h-full bg-white">
+                    <header className="p-5 flex items-center justify-between border-b border-gray-100">
+                        <div className="flex items-center gap-2">
+                            <span style={{
+                                fontFamily: "'Syne', sans-serif",
+                                fontWeight: 800,
+                                fontSize: "1.35rem",
+                                color: "var(--slate-dark)",
+                                letterSpacing: "-0.02em"
+                            }}>
+                                buy<span style={{ color: "var(--accent)" }}>there</span>
+                            </span>
+                        </div>
+                        <button onClick={() => setIsOpen(false)} className="text-gray-500 hover:text-gray-700">
+                            <XMarkIcon className="block h-7 w-7" />
+                        </button>
                     </header>
-                    <div onClick={() => {
-                        setIsOpen(false);
-                    }}>{children}</div>
+                    <div className="flex-1 overflow-y-auto px-4 py-6" onClick={() => setIsOpen(false)}>
+                        {children}
+                    </div>
                 </article>
             </section>
+            
+            {/* Overlay click to close */}
             <section
-                className=" w-screen h-full cursor-pointer "
-                onClick={() => {
-                    setIsOpen(false);
-                }}
+                className="w-full h-full cursor-pointer"
+                onClick={() => setIsOpen(false)}
             ></section>
         </main>
     );

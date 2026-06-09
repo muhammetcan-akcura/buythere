@@ -14,13 +14,12 @@ const Banner = () => {
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div style={{
                     display: "grid",
-                    gridTemplateColumns: "1fr 1fr",
                     gap: "48px",
                     alignItems: "center",
                     minHeight: "calc(100vh - 80px)",
                     paddingBottom: 60,
                 }}
-                    className="grid-cols-1 lg:grid-cols-2"
+                    className="grid grid-cols-1 lg:grid-cols-2"
                 >
                     {/* ── LEFT: TEXT ── */}
                     <div style={{ maxWidth: 560 }}>
