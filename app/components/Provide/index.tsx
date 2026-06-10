@@ -28,7 +28,7 @@ const Aboutdata: datatype[] = [
     },
     {
         imgSrc: "/assets/provide/uidesign.svg",
-        country: "Adversting",
+        country: "Advertising",
         paragraph: 'Advertising is the practice of promoting products, services, or brands through various media channels to attract and influence potential customers.',
     },
 ]
