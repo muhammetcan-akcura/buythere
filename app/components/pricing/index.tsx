@@ -605,7 +605,7 @@ const PaymentMethodModal = ({
                         </div>
                         <div style={{ textAlign: "left", flex: 1 }}>
                             <h4 style={{ fontSize: "18px", fontWeight: "bold", color: "#111827", marginBottom: "4px" }}>Stripe</h4>
-                            <p style={{ fontSize: "14px", color: "#6b7280" }}>Pay instantly with credit card</p>
+                            <p style={{ fontSize: "14px", color: "#6b7280" }}>Pay instantly with credit card (6% Fee)</p>
                         </div>
                         <svg
                             style={{ width: "20px", height: "20px", color: "#9ca3af" }}
@@ -667,7 +667,7 @@ const PaymentMethodModal = ({
                         </div>
                         <div style={{ textAlign: "left", flex: 1 }}>
                             <h4 style={{ fontSize: "18px", fontWeight: "bold", color: "#111827", marginBottom: "4px" }}>Payoneer</h4>
-                            <p style={{ fontSize: "14px", color: "#6b7280" }}>Manual payment via WhatsApp</p>
+                            <p style={{ fontSize: "14px", color: "#6b7280" }}>Manual payment via WhatsApp (4% Fee)</p>
                         </div>
                         <svg
                             style={{ width: "20px", height: "20px", color: "#9ca3af" }}
@@ -729,7 +729,7 @@ const PaymentMethodModal = ({
                         </div>
                         <div style={{ textAlign: "left", flex: 1 }}>
                             <h4 style={{ fontSize: "18px", fontWeight: "bold", color: "#111827", marginBottom: "4px" }}>Wise</h4>
-                            <p style={{ fontSize: "14px", color: "#6b7280" }}>Fast and secure international transfer</p>
+                            <p style={{ fontSize: "14px", color: "#6b7280" }}>Fast and secure international transfer (4% Fee)</p>
                         </div>
                         <svg
                             style={{ width: "20px", height: "20px", color: "#9ca3af" }}
