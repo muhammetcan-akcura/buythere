@@ -14,6 +14,18 @@ const servicesData: ServiceData[] = [
 
     {
         category: "Marketing Packages",
+        title: "Starter Essentials",
+        price: "$50",
+        priceNum: 50,
+        features: [
+            "Basic social media audit",
+            "1 custom post design",
+            "Initial hashtag strategy",
+            "3-day engagement guide"
+        ]
+    },
+    {
+        category: "Marketing Packages",
         title: "Micro Launch",
         price: "$100",
         priceNum: 100,
