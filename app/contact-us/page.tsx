@@ -31,7 +31,7 @@ export default function ContactUs() {
                             <p className="text-muted-foreground">
                             RM D5. S/F. KING YIP FACTORY BUILDING,<br />
                                 NO. 59 KING YIP STREET,<br />
-                                KBUN TONG HONG KONG
+                                KWUN TONG HONG KONG
                             </p>
                         </div>
                     </div>
