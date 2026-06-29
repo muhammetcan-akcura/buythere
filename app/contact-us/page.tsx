@@ -29,7 +29,7 @@ export default function ContactUs() {
                         <div>
                             <h2 className="text-xl font-semibold mb-2">Address (EN)</h2>
                             <p className="text-muted-foreground">
-                                RM DS. S/F. KING YIP FACTORY BUILDING,<br />
+                            RM D5. S/F. KING YIP FACTORY BUILDING,<br />
                                 NO. 59 KING YIP STREET,<br />
                                 KBUN TONG HONG KONG
                             </p>

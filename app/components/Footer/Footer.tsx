@@ -92,7 +92,7 @@ const Footer = () => {
                                 +90 505 042 88 20
                             </Link>
                             <p style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.4)", lineHeight: 1.6 }}>
-                                RM DS. S/F. KING YIP FACTORY BUILDING,<br />NO. 59 KING YIP STREET,<br />KBUN TONG HONG KONG
+                                RM D5. S/F. KING YIP FACTORY BUILDING,<br />NO. 59 KING YIP STREET,<br />KBUN TONG HONG KONG
                             </p>
                         </div>
                     </div>
