@@ -143,6 +143,45 @@ const servicesData: ServiceData[] = [
     },
     {
         category: "Web Design Packages",
+        title: "Mini Landing Page",
+        price: "$50",
+        priceNum: 50,
+        features: [
+            "1 simple landing page design",
+            "Mobile-responsive layout",
+            "Basic on-page SEO",
+            "Contact form integration"
+        ]
+    },
+    {
+        category: "Web Design Packages",
+        title: "Starter Website",
+        price: "$100",
+        priceNum: 100,
+        features: [
+            "Up to 2 pages design",
+            "Mobile-first responsive layout",
+            "Basic SEO optimization",
+            "Contact form & social media links",
+            "3-day delivery"
+        ]
+    },
+    {
+        category: "Web Design Packages",
+        title: "Small Business Website",
+        price: "$250",
+        priceNum: 250,
+        features: [
+            "Up to 3 pages custom design",
+            "Modern UI/UX design",
+            "Mobile & cross-browser optimized",
+            "Standard on-page SEO (meta, headers)",
+            "Contact form integration",
+            "5-day express delivery"
+        ]
+    },
+    {
+        category: "Web Design Packages",
         title: "Web Design Starter",
         price: "$500",
         priceNum: 500,
@@ -251,6 +290,33 @@ const servicesData: ServiceData[] = [
             "Enterprise-grade security & SSL setup",
             "Dedicated project manager & QA team",
             "3-month premium support & SLA guarantee"
+        ]
+    },
+    {
+        category: "Advertising Packages",
+        title: "Mini Ad Campaign",
+        price: "$100",
+        priceNum: 100,
+        features: [
+            "1 ad platform setup",
+            "1 campaign creation",
+            "Basic targeted keyword research",
+            "Ad copywriting",
+            "3-day campaign optimization"
+        ]
+    },
+    {
+        category: "Advertising Packages",
+        title: "Starter Ad Campaign",
+        price: "$250",
+        priceNum: 250,
+        features: [
+            "1 ad platform setup (Google or Meta)",
+            "1 campaign with 2 creative ad variations",
+            "Targeted keyword & interest research",
+            "Conversion-focused ad copywriting",
+            "Pixel/tag installation",
+            "7-day campaign optimization cycle"
         ]
     },
     {
@@ -379,8 +445,8 @@ const servicesData: ServiceData[] = [
     {
         category: "SEO Packages",
         title: "Starter",
-        price: "$200",
-        priceNum: 200,
+        price: "$250",
+        priceNum: 250,
         features: [
             "In-depth keyword research (30 keywords)",
             "Full on-page SEO optimization",
