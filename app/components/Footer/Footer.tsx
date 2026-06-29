@@ -87,12 +87,12 @@ const Footer = () => {
                             <p style={{ fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: 10 }}>
                                 Contact
                             </p>
-                            <Link href="tel:+905523568756"
+                            <Link href="tel:+905050428820"
                                 style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.6)", textDecoration: "none", display: "block", marginBottom: 6 }}>
-                                +90 552 356 87 56
+                                +90 505 042 88 20
                             </Link>
                             <p style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.4)", lineHeight: 1.6 }}>
-                                128 City Road, London<br />EC1V 2NX, United Kingdom
+                                RM DS. S/F. KING YIP FACTORY BUILDING,<br />NO. 59 KING YIP STREET,<br />KBUN TONG HONG KONG
                             </p>
                         </div>
                     </div>

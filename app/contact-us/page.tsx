@@ -19,7 +19,7 @@ export default function ContactUs() {
                         <User className="w-6 h-6 mt-1 flex-shrink-0" />
                         <div>
                             <h2 className="text-xl font-semibold mb-2">Company Owner</h2>
-                            <p className="text-muted-foreground">Zekeriya Genc</p>
+                            <p className="text-muted-foreground">YILMAZ, KERIM</p>
                         </div>
                     </div>
 
@@ -29,19 +29,10 @@ export default function ContactUs() {
                         <div>
                             <h2 className="text-xl font-semibold mb-2">Address (EN)</h2>
                             <p className="text-muted-foreground">
-                                128, City Road
-                                London
-                                EC1V 2NX
-                                UNITED KINGDOM
+                                RM DS. S/F. KING YIP FACTORY BUILDING,<br />
+                                NO. 59 KING YIP STREET,<br />
+                                KBUN TONG HONG KONG
                             </p>
-                        </div>
-                    </div>
-
-                    <div className="flex items-start gap-4 pb-6 border-b border-border">
-                        <Mail className="w-6 h-6 mt-1 flex-shrink-0" />
-                        <div>
-                            <h2 className="text-xl font-semibold mb-2">Postal/ZIP code: 999077</h2>
-                            <p className="text-muted-foreground">999077</p>
                         </div>
                     </div>
 
@@ -50,8 +41,8 @@ export default function ContactUs() {
                         <Phone className="w-6 h-6 mt-1 flex-shrink-0" />
                         <div>
                             <h2 className="text-xl font-semibold mb-2">Tel</h2>
-                            <a href="tel:+90 552 356 87 56" className="text-muted-foreground hover:text-foreground transition-colors">
-                                +90 552 356 87 56
+                            <a href="tel:+905050428820" className="text-muted-foreground hover:text-foreground transition-colors">
+                                +90 505 042 88 20
                             </a>
                         </div>
                     </div>
@@ -64,24 +55,13 @@ export default function ContactUs() {
                             <div className="flex flex-col sm:flex-row gap-3">
                                 {/* WhatsApp Butonu */}
                                 <a
-                                    href="https://wa.me/905523568756"
+                                    href="https://wa.me/905050428820"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center justify-center gap-2 px-6 py-3 border border-border rounded-md hover:bg-muted transition-colors"
                                 >
                                     <MessageCircle className="w-5 h-5" />
                                     <span>WhatsApp</span>
-                                </a>
-
-                                {/* Telegram Butonu */}
-                                <a
-                                    href="https://t.me/itsjustseo"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center justify-center gap-2 px-6 py-3 border border-border rounded-md hover:bg-muted transition-colors"
-                                >
-                                    <Send className="w-5 h-5" />
-                                    <span>Telegram</span>
                                 </a>
                             </div>
                         </div>
