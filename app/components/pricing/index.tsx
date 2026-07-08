@@ -825,7 +825,7 @@ const PaymentMethodModal = ({
 }
 
 const PayoneerContactModal = ({ service, onClose }: { service: ServiceData; onClose: () => void }) => {
-    const whatsappNumber = "905523568756" // Replace with your WhatsApp number
+    const whatsappNumber = "905050428820" // Replace with your WhatsApp number
     const message = `Hi, I'm interested in the ${service.title} package (${service.price}) and would like to pay via Payoneer.`
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
 
@@ -924,7 +924,7 @@ const PayoneerContactModal = ({ service, onClose }: { service: ServiceData; onCl
 }
 
 const WiseContactModal = ({ service, onClose }: { service: ServiceData; onClose: () => void }) => {
-    const whatsappNumber = "905523568756" // Replace with your WhatsApp number
+    const whatsappNumber = "905050428820" // Replace with your WhatsApp number
     const message = `Hi, I'm interested in the ${service.title} package (${service.price}) and would like to pay via Wise.`
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
 
