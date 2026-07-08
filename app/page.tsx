@@ -18,8 +18,8 @@ export default function Home() {
       <Services />
       <Why />
       <Network />
-      <Clientsay />
-      <Buyers />
+      {/* <Clientsay />
+      <Buyers /> */}
       <FAQ />
       <Newsletter />
     </main>
