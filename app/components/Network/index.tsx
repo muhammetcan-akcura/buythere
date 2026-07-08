@@ -21,8 +21,8 @@ const Aboutdata: datatype[] = [
     },
     {
         imgSrc: "/assets/network/dubai.svg",
-        country: "Dubai",
-        paragraph: 'Empowering Dubai startups and enterprises with cutting-edge advertising campaigns, data-driven marketing strategies, and SEO-optimized digital growth solutions.',
+        country: "United Arab Emirates",
+        paragraph: 'Empowering United Arab Emirates startups and enterprises with cutting-edge advertising campaigns, data-driven marketing strategies, and SEO-optimized digital growth solutions.',
 
     },
     {
