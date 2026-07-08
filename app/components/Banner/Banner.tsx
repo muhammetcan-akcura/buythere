@@ -96,23 +96,7 @@ const Banner = () => {
                         </div>
 
                         {/* Stats */}
-                        <div style={{
-                            display: "flex",
-                            gap: 32,
-                            paddingTop: 28,
-                            borderTop: "1px solid var(--border-soft)"
-                        }}>
-                            {stats.map((s, i) => (
-                                <div key={i}>
-                                    <p style={{ fontSize: "1.6rem", fontWeight: 700, color: "#111827", lineHeight: 1 }}>
-                                        {s.num}
-                                    </p>
-                                    <p style={{ fontSize: "0.8rem", color: "#9CA3AF", marginTop: 4, fontWeight: 500 }}>
-                                        {s.label}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
+
                     </div>
 
                     {/* ── RIGHT: VISUAL ── */}
