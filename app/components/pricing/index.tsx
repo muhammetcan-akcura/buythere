@@ -11,6 +11,17 @@ interface ServiceData {
 }
 
 const servicesData: ServiceData[] = [
+    {
+        category: "Marketing Packages",
+        title: "Basic Audit",
+        price: "$20",
+        priceNum: 20,
+        features: [
+            "Basic social media review",
+            "1 quick-fix recommendation",
+            "1-day engagement guide"
+        ]
+    },
 
     {
         category: "Marketing Packages",
